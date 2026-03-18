@@ -1,9 +1,10 @@
+import os
 from google import genai
 
 # The client gets the API key from the environment variable `GEMINI_API_KEY`.
 def chatBot(symptoms_text):
     client = genai.Client(
-        api_key="AIzaSyA5OaWBIHkHcthhkiTx12NGKM30EeyfNG4"
+        api_key = os.getenv("GEMINI_API_KEY")
     )
     
     
