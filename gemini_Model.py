@@ -1,15 +1,10 @@
 import os
 import google.generativeai as genai
 
-# The client gets the API key from the environment variable `GEMINI_API_KEY`.
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
 def chatBot(symptoms_text):
-    client = genai.Client(
-        api_key = os.getenv("GEMINI_API_KEY")
-    )
-    
-    
-    
-    det = f"""You are a medical assistant AI designed for preliminary health risk assessment. 
+    prompt = f"""You are a medical assistant AI designed for preliminary health risk assessment. 
 
                 A user will provide a list of symptoms. Based on those symptoms, your task is to:
 
@@ -38,10 +33,11 @@ def chatBot(symptoms_text):
                 1. use new line and spacing between lines as needed
                 2. Don't use any special symbol
                 """
-                
-                
-    response = client.models.generate_content(
-        
-        model="gemini-3-flash-preview", contents= det
-    )
-    return(response.text)
+
+    model = genai.GenerativeModel("gemini-1.5-flash")
+
+    response = model.generate_content(prompt)
+
+    return response.text
+
+
