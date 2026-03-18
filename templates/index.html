@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Disease Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Bio-Scan System</h1>
+            <p>Select active symptoms to initiate AI diagnosis protocol</p>
+        </div>
+
+        <div class="symptoms">
+            <label><input type="checkbox" value="fever"><span class="symptom-btn">Fever</span></label>
+            <label><input type="checkbox" value="cough"><span class="symptom-btn">Cough</span></label>
+            <label><input type="checkbox" value="body pain"><span class="symptom-btn">Body Pain</span></label>
+            <label><input type="checkbox" value="fatigue"><span class="symptom-btn">Fatigue</span></label>
+            <label><input type="checkbox" value="rash"><span class="symptom-btn">Rash</span></label>
+            <label><input type="checkbox" value="joint pain"><span class="symptom-btn">Joint Pain</span></label>
+            <label><input type="checkbox" value="headache"><span class="symptom-btn">Headache</span></label>
+            <label><input type="checkbox" value="chills"><span class="symptom-btn">Chills</span></label>
+            <label><input type="checkbox" value="sweating"><span class="symptom-btn">Sweating</span></label>
+            <label><input type="checkbox" value="vomiting"><span class="symptom-btn">Vomiting</span></label>
+            <label><input type="checkbox" value="diarrhea"><span class="symptom-btn">Diarrhea</span></label>
+            <label><input type="checkbox" value="stomach pain"><span class="symptom-btn">Stomach Pain</span></label>
+            <label><input type="checkbox" value="loss of smell"><span class="symptom-btn">Loss of Smell</span></label>
+            <label><input type="checkbox" value="breathing difficulty"><span class="symptom-btn">Breathing
+                    Difficulty</span></label>
+            <label><input type="checkbox" value="nausea"><span class="symptom-btn">Nausea</span></label>
+            <label><input type="checkbox" value="sensitivity to light"><span class="symptom-btn">Light
+                    Sensitivity</span></label>
+        </div>
+
+        <button class="analyze-btn" id="analyzeBtn" onclick="predict()">
+            <span id="btnText">Initiate Scan</span>
+            <div class="spinner" id="btnSpinner"></div>
+        </button>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">x</span>
+            <div id="popup-result">
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
